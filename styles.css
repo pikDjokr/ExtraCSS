@@ -6,11 +6,22 @@
 div.container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 50vh;
+    background-color: black;
 }
 div.container div.ball{
     width: 100px;
     height: 100px;
     background-color: blueviolet;
+    transition-duration: 5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+div.container:hover div.ball{
+    /*transform: rotateZ(120deg);*/
+    /*transform: scale(2);*/
+    transform: translateX(400px);
+    cursor: pointer;
+    /*border-radius: 50%;*/
+    background-color: red ;
 }
