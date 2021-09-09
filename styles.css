@@ -6,22 +6,78 @@
 div.container{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     height: 50vh;
     background-color: black;
 }
 div.container div.ball{
     width: 100px;
     height: 100px;
-    background-color: blueviolet;
-    transition-duration: 5s;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: blueviolet;    
+    margin: 10px;
+    /*transition-duration: 5s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);*/
 }
-div.container:hover div.ball{
+ div.ball{
     /*transform: rotateZ(120deg);*/
     /*transform: scale(2);*/
-    transform: translateX(400px);
-    cursor: pointer;
+    /*transform: translateX(400px);
+    cursor: pointer;*/
     /*border-radius: 50%;*/
-    background-color: red ;
+    /*background-color: red ;*/
+    animation-duration: 1s;
+    animation-name: stylish-rotate;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+}
+div.ball:nth-child(2){
+    animation-delay: 2s;
+    animation-name: bounce;
+    animation-duration: 2s;
+}
+div.ball:nth-child(3){
+    animation-delay: 2.5s;
+}div.ball:nth-child(4){
+    animation-delay: 3s;
+    animation-name: bounce;
+    animation-duration: 2s;
+}div.ball:nth-child(5){
+    animation-delay: 3.2s;
+}
+@keyframes stylish-rotate {
+    0%{
+        background-color: violet;
+    }
+    14%{
+        background-color: indigo;
+    }
+    29%{
+        background-color: blue;
+    }
+    43%{
+        background-color: green;
+    }
+    57%{
+        background-color: yellow;
+    }
+    71%{
+        background-color: orange;
+    }
+    100%{
+        transform: rotate(360deg);
+        background-color: red;
+    }
+}
+@keyframes bounce{
+    0%{}
+    50%{
+        transform:translateY(100px);
+    }
+    75%{
+        transform: translateY(-100px);
+    }
+    100%{
+    }
 }
